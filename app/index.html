@@ -2,26 +2,16 @@
 <html ng-app="bloccitoff">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Bloc Base Project</title>
+    <title>Bloccitoff</title>
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
   <ui-view></ui-view>
-  <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-
-
-     <!-- AngularUI Router -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
-
-     <!-- FireBase -->
-        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-
-     <!-- AngularFire -->
-     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+      <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 <script>
-  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDh-BsVN4z3ay0no7A1oMfP3ajTaic4YaA",
     authDomain: "bloccitoff-56b2b.firebaseapp.com",
@@ -35,6 +25,25 @@
 
     <!-- Application Files -->
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers/HomeCtrl.js"></script>
+    <script src="/scripts/controllers/FBCtrl.js"></script>
 
+
+    <body ng-app="blocitoff" ng-controller="FBCtrl">
+      <h1>Bloc it off</h1>
+
+      <ul>
+        <li ng-repeat="task in tasks">
+          <input ng-model="task.text" ng-change="tasks.$save(task)" />
+          <button ng-click="tasks.$remove(task)">Delete Task</button>
+        </li>
+      </ul>
+
+      <form ng-submit="addTask()">
+        <input ng-model="newTaskText" />
+        <button type="submit">Add Task</button>
+      </form>
+
+      <div ui-view></div>
 </body>
 </html>
