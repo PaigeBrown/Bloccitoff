@@ -1,1 +1,17 @@
  <h1>Home Page</h1>
+ <body ng-app="blocitoff" ng-controller="HomeCtrl">
+   <h1>Bloccitoff</h1>
+
+   <ul>
+     <li ng-repeat="task in tasks">
+       <input ng-model="task.text" ng-change="tasks.$save(task)" />
+       <button ng-click="tasks.$remove(task)">Delete Task</button>
+     </li>
+   </ul>
+
+   <form ng-submit="addTask()">
+     <input ng-model="newTaskText" />
+     <button type="submit">Add Task</button>
+   </form>
+
+   <div ui-view></div>
