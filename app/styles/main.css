@@ -1,0 +1,28 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  background-color: #98f9f9;
+}
+
+.form {
+  background-color: white;
+  width: 50%;
+  margin: 0% 25%;
+  border-radius: 5px;
+  padding: 5px 0px;
+}
+
+.submission {
+  margin: 5px;
+}
+
+.current-tasks {
+  background-color: #f9857c;
+  width: 75%;
+  margin: 0% 12.5%;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.task-box {
+  padding: 5px;
+}
