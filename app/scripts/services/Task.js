@@ -5,7 +5,14 @@
     Task.tasks = tasks;
 
     Task.addTask = function(task){
-      tasks.$add({ Description : task.description })
+      // tasks.$add({ Description : task.description })
+      // tasks.$add({ CreatedAt : Date.now()})
+
+
+      tasks.$add({
+        Description : task.description,
+        CreatedAt : Date.now(),
+      })
     }
 
     return Task;

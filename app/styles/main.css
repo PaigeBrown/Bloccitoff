@@ -19,10 +19,12 @@ body {
 .current-tasks {
   background-color: #f9857c;
   width: 75%;
-  margin: 0% 12.5%;
+  margin: 3% 12.5%;
   font-family: 'Roboto Mono', monospace;
+  border-radius: 5px;
+  text-align: left;
 }
 
-.task-box {
-  padding: 5px;
+.current-tasks h3 {
+  text-align: center;
 }

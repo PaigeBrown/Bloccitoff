@@ -10,7 +10,10 @@
  </form>
  <div class=current-tasks>
    <h3>Current Tasks</h3>
-    <div class=task-box, ng-repeat="task in home.tasks">
-      {{ task.Description }} <br/>
+    <div ng-repeat="task in home.tasks">
+      <!-- ng-show notes -->
+      <!-- ng-show = "if task.CreatedAt < 7days ago" -->
+      <input id="checkBox" type="checkbox"> {{ task.Description }} submitted: {{task.CreatedAt | date:'MMM dd, hh:mm:ss a, y'}} <br/>
+
     </div>
 </div>
