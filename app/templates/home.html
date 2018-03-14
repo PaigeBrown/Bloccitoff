@@ -1,19 +1,18 @@
  <h1>Emily's Bloccitoff</h1>
+ <a ui-sref="expired">Expired Tasks</a>
 
  <form class= "form">
  	<h3>Create a New Task</h3>
  	<input type="text" ng-model="task.description"> <br />
  	<div class="submission">
     <input type="submit" ng-click="update(task)" value="Add">
- 		<!-- <button ui-sref="home">Cancel</button> -->
  	</div>
  </form>
  <div class=current-tasks>
    <h3>Current Tasks</h3>
-    <div ng-repeat="task in home.tasks">
-      <!-- ng-show notes -->
-      <!-- ng-show = "if task.CreatedAt < 7days ago" -->
-      <input id="checkBox" type="checkbox"> {{ task.Description }} submitted: {{task.CreatedAt | date:'MMM dd, hh:mm:ss a, y'}} <br/>
+    <div ng-repeat="task in home.tasks" ng-show="task.CreatedAt > home.oldTime">
+
+      <input class="checkBox" type="checkbox" ng-click="home.clickedCheckbox()"> {{ task.Description }} submitted: {{task.CreatedAt | date:'MMM dd, hh:mm:ss a, y'}} <br/>
 
     </div>
 </div>

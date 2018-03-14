@@ -1,7 +1,7 @@
 body {
   font-family: 'Raleway', sans-serif;
   text-align: center;
-  background-color: #98f9f9;
+  background: url("/assets/images/background.jpg");
 }
 
 .form {
@@ -12,12 +12,16 @@ body {
   padding: 5px 0px;
 }
 
+h1 {
+  color: white;
+}
+
 .submission {
   margin: 5px;
 }
 
 .current-tasks {
-  background-color: #f9857c;
+  background-color: #98f9f9;
   width: 75%;
   margin: 3% 12.5%;
   font-family: 'Roboto Mono', monospace;
@@ -27,4 +31,34 @@ body {
 
 .current-tasks h3 {
   text-align: center;
+}
+
+a {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+a:link {
+    color: black;
+  }
+
+a:visited {
+    color: grey;
+}
+
+a:hover {
+    color: #98f9f9;
+}
+
+a:active {
+    color: yellow;
+}
+
+.expired-tasks {
+  background-color: #98f9f9;
+  width: 75%;
+  margin: 3% 12.5%;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 5px;
+  text-align: left;
 }

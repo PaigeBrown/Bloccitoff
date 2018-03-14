@@ -5,9 +5,6 @@
     Task.tasks = tasks;
 
     Task.addTask = function(task){
-      // tasks.$add({ Description : task.description })
-      // tasks.$add({ CreatedAt : Date.now()})
-
 
       tasks.$add({
         Description : task.description,
@@ -15,8 +12,15 @@
       })
     }
 
+Task.completeTask = function(task){
+  task.$complete({
+    Completed : task.completed,
+  })
+}
+
     return Task;
   }
+
 
   angular
     .module('bloccitoff')
