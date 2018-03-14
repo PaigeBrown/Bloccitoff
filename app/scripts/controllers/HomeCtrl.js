@@ -6,11 +6,11 @@
         Task.addTask(task);
       };
 
-      this.clickedCheckbox = function(task) {
-        Task.completeTask(task);
-        alert('Task is marked completed')
-
-      };
+      // this.clickedCheckbox = function(task) {
+      //   Task.completeTask(task);
+      //   alert('Task is marked completed')
+      //
+      // };
     }
 
 

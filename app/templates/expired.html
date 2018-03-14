@@ -5,9 +5,9 @@
 <div class=expired-tasks>
   <h3> Testing </h3>
 
-    <div ng-repeat="task in home.tasks" ng-show="task.CreatedAt < home.oldTime">
+    <div ng-repeat="task in expired.tasks" ng-hide="task.CreatedAt > expired.oldTime">
 
-      <input class="checkBox" type="checkbox" ng-click="home.clickedCheckbox()"> {{ task.Description }} submitted: {{task.CreatedAt | date:'MMM dd, hh:mm:ss a, y'}} <br/>
+      {{ task.Description }} submitted: {{task.CreatedAt | date:'MMM dd, hh:mm:ss a, y'}} <br/>
 
     </div>
 </div>

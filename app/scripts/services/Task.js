@@ -2,6 +2,7 @@
   function Task($firebaseArray) {
     var ref = firebase.database().ref().child("tasks");
     var tasks = $firebaseArray(ref);
+
     Task.tasks = tasks;
 
     Task.addTask = function(task){
@@ -12,11 +13,11 @@
       })
     }
 
-Task.completeTask = function(task){
-  task.$complete({
-    Completed : task.completed,
-  })
-}
+// Task.completeTask = function(task){
+//   task.$complete({
+//     Completed : task.completed,
+//   })
+// }
 
     return Task;
   }
