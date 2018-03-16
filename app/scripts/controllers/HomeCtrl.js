@@ -3,18 +3,16 @@
       this.tasks = Task.tasks;
       this.oldTime = new Date() - 864e5
 
-    //   this.taskStatus = function (task) {
-    //   Task.completeTask(task);
-    // }
       $scope.update = function(task){
         Task.addTask(task);
       };
 
+      $scope.completion = function(task){
+        Task.completeTask(task);
+      };
+
       this.clickedCheckbox = function(task) {
-        // Task.completeTask(task)
-        // // task.completed = true;
-        //   task.$save(task)
-        alert('Task is marked completed, and is now in the Expired Tasks list')
+            alert('Task is marked completed, and is now in the Expired Tasks list')
 
       };
     }

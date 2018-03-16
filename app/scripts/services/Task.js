@@ -16,7 +16,7 @@
     }
 
     Task.completeTask = function(task){
-      tasks.$complete({
+        tasks.get(:id);
         completed : true,
       })
     }

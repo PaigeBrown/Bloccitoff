@@ -17,7 +17,7 @@
    <h3>Current Tasks</h3>
     <div ng-repeat="task in home.tasks | orderBy:'Priority'" ng-show="task.CreatedAt > home.oldTime && !task.completed" >
 
-      <input class="checkBox" type="checkbox" ng-model="task.completed" ng-click="home.clickedCheckbox()"> {{ task.Description }} submitted: {{task.CreatedAt | date:'MMM dd, hh:mm:ss a, y'}} <br/>
+      <input class="checkBox" type="checkbox" ng-model="task.completed" ng-change="completion(task)" ng-click="home.clickedCheckbox()"> {{ task.Description }} submitted: {{task.CreatedAt | date:'MMM dd, hh:mm:ss a, y'}} <br/>
 
     </div>
 </div>
