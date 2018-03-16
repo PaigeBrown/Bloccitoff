@@ -11,10 +11,10 @@
       };
 
       this.clickedCheckbox = function(task) {
-        Task.completeTask(task)
-        // task.completed = true;
-          task.$save(task)
-        alert('Task is marked completed')
+        // Task.completeTask(task)
+        // // task.completed = true;
+        //   task.$save(task)
+        alert('Task is marked completed, and is now in the Expired Tasks list')
 
       };
     }
