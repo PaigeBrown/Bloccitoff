@@ -3,16 +3,21 @@
 
  <form class= "form">
  	<h3>Create a New Task</h3>
- 	<input type="text" ng-model="task.description"> <br />
+ 	<input type="text" ng-model="task.description">
+  <select class="priority" ng-model="task.priority">
+      <option value="3">Low</option>
+      <option value="2">Meduim</option>
+      <option value="1">High</option>
+    </select><br />
  	<div class="submission">
     <input type="submit" ng-click="update(task)" value="Add">
  	</div>
  </form>
  <div class=current-tasks>
    <h3>Current Tasks</h3>
-    <div ng-repeat="task in home.tasks" ng-show="task.CreatedAt > home.oldTime">
+    <div ng-repeat="task in home.tasks | orderBy:'Priority'" ng-show="task.CreatedAt > home.oldTime">
 
-      <input class="checkBox" type="checkbox" ng-click="home.clickedCheckbox()" ng-model="completed"> {{ task.Description }} submitted: {{task.CreatedAt | date:'MMM dd, hh:mm:ss a, y'}} <br/>
+      <input class="checkBox" type="checkbox" ng-model="task.completed" ng-click="home.clickedCheckbox()"> {{ task.Description }} submitted: {{task.CreatedAt | date:'MMM dd, hh:mm:ss a, y'}} <br/>
 
     </div>
 </div>

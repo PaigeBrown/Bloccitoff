@@ -10,16 +10,19 @@
       tasks.$add({
         Description : task.description,
         CreatedAt : Date.now(),
+        completed : false,
+        Priority : task.priority
       })
     }
 
-// Task.completeTask = function(task){
-//   task.$complete({
-//     Completed : task.completed,
-//   })
-// }
+    Task.completeTask = function(task){
+      tasks.$complete({
+        completed :true,
+      })
+    }
 
-    return Task;
+    return Task
+
   }
 
 
