@@ -17,7 +17,7 @@
 
     Task.completeTask = function(task){
       tasks.$complete({
-        completed :true,
+        completed : true,
       })
     }
 

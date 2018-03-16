@@ -15,7 +15,7 @@
  </form>
  <div class=current-tasks>
    <h3>Current Tasks</h3>
-    <div ng-repeat="task in home.tasks | orderBy:'Priority'" ng-show="task.CreatedAt > home.oldTime">
+    <div ng-repeat="task in home.tasks | orderBy:'Priority'" ng-show="task.CreatedAt > home.oldTime && !task.completed" >
 
       <input class="checkBox" type="checkbox" ng-model="task.completed" ng-click="home.clickedCheckbox()"> {{ task.Description }} submitted: {{task.CreatedAt | date:'MMM dd, hh:mm:ss a, y'}} <br/>
 

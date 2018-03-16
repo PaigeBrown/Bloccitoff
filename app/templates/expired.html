@@ -5,7 +5,7 @@
 <div class=expired-tasks>
   <h3> Expired and Completed Tasks </h3>
 
-    <div ng-repeat="task in expired.tasks" ng-hide="task.CreatedAt > expired.oldTime">
+    <div ng-repeat="task in expired.tasks" ng-show="task.CreatedAt < expired.oldTime || task.completed">
 
       {{ task.Description }} submitted: {{task.CreatedAt | date:'MMM dd, hh:mm:ss a, y'}} <br/>
 
