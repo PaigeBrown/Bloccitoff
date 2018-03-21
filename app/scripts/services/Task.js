@@ -15,11 +15,15 @@
       })
     }
 
-    Task.completeTask = function(task){
-        tasks.get(:id);
-        completed : true,
-      })
-    }
+
+
+        Task.completeTask = function(task){
+          //task.completed = true;
+          tasks.$save(task).then(function(ref) {
+            console.log('ref',ref)
+            //  ref.key() === list[task].$id; // true
+          });
+        }
 
     return Task
 

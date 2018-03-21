@@ -1,14 +1,14 @@
 (function() {
-    function ExpiredCtrl($scope, Task) {
+    function ExpiredCtrl(Task) {
       this.tasks = Task.tasks;
       this.oldTime = new Date() - 864e5
-      $scope.update = function(task){
 
-
-        };
-      }
+      this.clickedCheckbox = function(task) {
+            Task.completeTask(task);
+      };
+    }
 
     angular
         .module('bloccitoff')
-        .controller('ExpiredCtrl', ['$scope', 'Task', ExpiredCtrl]);
+        .controller('ExpiredCtrl', ['Task', ExpiredCtrl]);
 })();

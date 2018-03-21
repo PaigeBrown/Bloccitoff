@@ -1,24 +1,19 @@
 (function() {
-    function HomeCtrl($scope, Task) {
+    function HomeCtrl(Task) {
       this.tasks = Task.tasks;
       this.oldTime = new Date() - 864e5
 
-      $scope.update = function(task){
+      this.update = function(task){
         Task.addTask(task);
       };
 
-      $scope.completion = function(task){
-        Task.completeTask(task);
-      };
-
       this.clickedCheckbox = function(task) {
-            alert('Task is marked completed, and is now in the Expired Tasks list')
-
+            Task.completeTask(task);
       };
     }
 
 
     angular
         .module('bloccitoff')
-        .controller('HomeCtrl', ['$scope', 'Task', HomeCtrl]);
+        .controller('HomeCtrl', ['Task', HomeCtrl]);
 })();

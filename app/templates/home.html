@@ -10,14 +10,14 @@
       <option value="1">High</option>
     </select><br />
  	<div class="submission">
-    <input type="submit" ng-click="update(task)" value="Add">
+    <input type="submit" ng-click="home.update(task)" value="Add">
  	</div>
  </form>
  <div class=current-tasks>
    <h3>Current Tasks</h3>
     <div ng-repeat="task in home.tasks | orderBy:'Priority'" ng-show="task.CreatedAt > home.oldTime && !task.completed" >
 
-      <input class="checkBox" type="checkbox" ng-model="task.completed" ng-change="completion(task)" ng-click="home.clickedCheckbox()"> {{ task.Description }} submitted: {{task.CreatedAt | date:'MMM dd, hh:mm:ss a, y'}} <br/>
+      <input class="checkBox" type="checkbox" ng-model="task.completed" ng-click="home.clickedCheckbox(task)"> {{ task.Description }} submitted: {{task.CreatedAt | date:'MMM dd, hh:mm:ss a, y'}} <br/>
 
     </div>
 </div>
