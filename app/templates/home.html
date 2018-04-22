@@ -1,12 +1,13 @@
- <h1>Emily's Bloccitoff</h1>
+ <h1>Emily's Task Manager App</h1>
  <a ui-sref="expired">Expired Tasks</a>
 
  <form class= "form">
  	<h3>Create a New Task</h3>
  	<input type="text" ng-model="task.description">
   <select class="priority" ng-model="task.priority">
+      <option value="">Priority</option>
       <option value="3">Low</option>
-      <option value="2">Meduim</option>
+      <option value="2">Medium</option>
       <option value="1">High</option>
     </select><br />
  	<div class="submission">
